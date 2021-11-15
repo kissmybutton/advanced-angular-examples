@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="main">
+  <app-filters></app-filters>
+  <hr />
+  <div class="card-container">
+    <div *ngFor="let article of topHeadlines?.articles">
+      <app-card [article]="article"></app-card>
+    </div>
+  </div>
+
+  <mat-paginator
+    [length]="topHeadlines?.totalResults"
+    [pageIndex]="pageIndex"
+    [pageSize]="6"
+    (page)="pageChanged($event)"
+  >
+  </mat-paginator>
+</div>
+<div class="footer">
+  <a href="/">Privacy</a>
+  <p>|</p>
+  <a href="/">Terms</a>
+  <p>|</p>
+  <a href="/">Cookies</a>
+  <p>|</p>
+  <a href="/">More</a>
+</div>

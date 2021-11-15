@@ -1,0 +1,21 @@
+<div class="filters">
+  <form [formGroup]="filterForm">
+    <div class="search">
+      <mat-form-field appearance="fill">
+        <mat-label>Search Channels</mat-label>
+        <input aria-label="searchName" matInput formControlName="searchName" />
+      </mat-form-field>
+    </div>
+
+    <div class="category">
+      <mat-form-field appearance="fill">
+        <mat-label>Choose Category</mat-label>
+        <mat-select formControlName="categoryName">
+          <mat-option *ngFor="let category of categories" [value]="category">{{
+            category
+          }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </form>
+</div>
